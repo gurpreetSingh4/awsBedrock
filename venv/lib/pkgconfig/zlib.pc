@@ -1,0 +1,13 @@
+prefix=/home/gurpreet/Desktop/awsBedrock/venv
+exec_prefix=/home/gurpreet/Desktop/awsBedrock/venv
+libdir=/home/gurpreet/Desktop/awsBedrock/venv/lib
+sharedlibdir=/home/gurpreet/Desktop/awsBedrock/venv/lib
+includedir=/home/gurpreet/Desktop/awsBedrock/venv/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
