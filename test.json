@@ -18,3 +18,10 @@
     "accept": "application/json",
     "body": "{\"text_prompts\":[{\"text\":\"Sri lanka tea plantation.\",\"weight\":1}],\"cfg_scale\":10,\"seed\":0,\"steps\":50,\"width\":512,\"height\":512}"
   }
+
+  {
+    "modelId": "amazon.titan-image-generator-v1",
+    "contentType": "application/json",
+    "accept": "application/json",
+    "body": "{\"textToImageParams\":{\"text\":\"blue backpack on a table\"},\"taskType\":\"TEXT_IMAGE\",\"imageGenerationConfig\":{\"cfgScale\":8,\"seed\":0,\"quality\":\"standard\",\"width\":1024,\"height\":1024,\"numberOfImages\":3}}"
+  }

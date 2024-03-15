@@ -34,8 +34,7 @@ def data_ingestion():
     documents=loader.load()
 
     # - in our testing Character split works better with this PDF data set
-    text_splitter=RecursiveCharacterTextSplitter(chunk_size=10000,
-                                                 chunk_overlap=1000)
+    text_splitter=RecursiveCharacterTextSplitter(chunk_size=10000,chunk_ovelap=1000)
     
     docs=text_splitter.split_documents(documents)
     return docs

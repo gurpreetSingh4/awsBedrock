@@ -10,16 +10,17 @@ prompt_template=[{"text":prompt_data,"weight":1}]
 bedrock = boto3.client(service_name="bedrock-runtime")
 payload = {
     "text_prompts":prompt_template,
-    "cfg_scale": 10,
+    "cfgScale": 8,
     "seed": 0,
-    "steps":50,
-    "width":512,
-    "height":512
+    "quality":"standard",
+    "width":1024,
+    "height":1024,
+    "numberOfImages":1,
 
 }
 
 body = json.dumps(payload)
-model_id = "stability.stable-diffusion-xl-v0"
+model_id = "amazon.titan-image-generator-v1"
 response = bedrock.invoke_model(
     body=body,
     modelId=model_id,
