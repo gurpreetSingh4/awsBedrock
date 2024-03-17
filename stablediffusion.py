@@ -4,7 +4,7 @@ import base64
 import os
 
 prompt_data = """
-provide me an 4k hd image of krishna eating cake at party
+provide me an 4k hd image of dog dance at party at night
 """
 prompt_template=[{"text":prompt_data,"weight":1}]
 bedrock = boto3.client(service_name="bedrock-runtime")

@@ -2,3 +2,4 @@ boto3
 awscli
 streamlit
 python-dotenv
+langchain
