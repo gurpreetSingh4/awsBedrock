@@ -6,17 +6,21 @@ import os
 prompt_data = """
 provide me an 4k hd image of krishna eating cake at party
 """
-prompt_template=[{"text":prompt_data,"weight":1}]
-bedrock = boto3.client(service_name="bedrock-runtime")
-payload = {
-    "text_prompts":prompt_template,
+prompt_template={"text":prompt_data}
+
+img_config={
     "cfgScale": 8,
     "seed": 0,
     "quality":"standard",
     "width":1024,
     "height":1024,
     "numberOfImages":1,
-
+}
+bedrock = boto3.client(service_name="bedrock-runtime")
+payload = {
+    "textToImageParams":prompt_template,
+    "taskType":"TEXT_IMAGE",
+    "imageGenerationConfig":img_config,
 }
 
 body = json.dumps(payload)
@@ -35,8 +39,9 @@ image_encoded = artifact.get("base64").encode("utf-8")
 image_bytes = base64.b64decode(image_encoded)
 
 # Save image to a file in the output directory.
-output_dir = "output"
+output_dir = "output1"
 os.makedirs(output_dir, exist_ok=True)
-file_name = f"{output_dir}/generated-img.png"
+file_name = f"{output_dir}/generated-img1.png"
 with open(file_name, "wb") as f:
     f.write(image_bytes)
+

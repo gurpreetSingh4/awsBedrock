@@ -6,6 +6,7 @@ import os
 prompt_data = """
 provide me an 4k hd image of dog dance at party at night
 """
+# prompt_template in dictionary format
 prompt_template=[{"text":prompt_data,"weight":1}]
 bedrock = boto3.client(service_name="bedrock-runtime")
 payload = {
@@ -17,16 +18,18 @@ payload = {
     "height":512
 
 }
-
+# json.dumps(payload) is a method that converts a Python object payload into a JSON (JavaScript Object Notation) string.
 body = json.dumps(payload)
+
 model_id = "stability.stable-diffusion-xl-v0"
+
 response = bedrock.invoke_model(
     body=body,
     modelId=model_id,
     accept="application/json",
     contentType="application/json",
 )
-
+# JSON string and convert it into a Python object json.loads
 response_body = json.loads(response.get("body").read())
 print(response_body)
 artifact = response_body.get("artifacts")[0]
