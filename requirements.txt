@@ -3,4 +3,4 @@ awscli
 streamlit
 python-dotenv
 langchain
-base64
+streamlit
