@@ -5,7 +5,7 @@ import os
 import streamlit as st
 
 prompt_data = """
-provide me an hd image of monkey who angry on cat
+give hd picture of lord shiv with nandi
 """
 def generate_image(prompt_data):
     # prompt_template in dictionary format
